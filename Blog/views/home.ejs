@@ -1,0 +1,15 @@
+
+<%- include("partials/header"); -%>
+
+
+  <%  newBlocks.forEach(function(block){ %>
+
+    <h1><%=block.blockTitle%></h1>
+    <p>
+    <%=block.blockContent.substring(0, 100) + " ..."%>
+    <a href="/posts/<%=block.blockTitle%>">Read More</a>
+    </p>
+    <% }) %>
+
+
+<%- include("partials/footer"); -%>
