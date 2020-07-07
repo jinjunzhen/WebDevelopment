@@ -1,2 +1,3 @@
 Blog: a blog web page allow user to compose blog and upload to mongodb~
 Mongo API Sample: sample code to setup wiki like API with mongodb
+projectTemplate: simply put every function together.
