@@ -1,0 +1,44 @@
+<%- include("partials/header"); %>
+
+
+
+
+<% var maxCount = 807;  var recentCount  %>
+
+<div class="container">
+
+  <% for (recentCount=1; recentCount < maxCount; recentCount++) {  %>
+
+
+  <%  if (recentCount % 6 === 1) {  %>
+  <div class="row">
+    <%  }  %>
+
+    <div class="col-md-2">
+      <a href="/post/<%=recentCount%>">
+        <div class="card" onClick="javascript:this.form.submit();">
+          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%=recentCount%>.png"
+            alt="Avatar" style="width:95%" />
+          <div class="container">
+            <p>No.<%=recentCount%> <%=pokeName[recentCount]%></p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <%  if (recentCount % 6 === 0) {  %>
+  </div>
+  <%  }  %>
+  <%  }  %>
+
+  <%if (recentCount % 6 !== 0) {  %>
+</div>
+<%}  %>
+</div>
+
+
+
+</form>
+<br><br><br>
+
+<%- include("partials/footer"); %>
