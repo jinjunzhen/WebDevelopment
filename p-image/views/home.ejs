@@ -1,0 +1,64 @@
+<%- include("partials/header"); %>
+
+
+<div class="container main-container">
+  <div class="row">
+    <div class="col-sm-8 mt-3">
+
+      <h4>try to post something here</h4>
+
+      <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="avatar" required />
+        Picture Name: <input type="text" name="picName" placeholder="enter name here" value="" required>
+        <div class="">
+          <button type="submit" name="button1">upload</button>
+          <br><br><br>
+        </div>
+      </form>
+    </div>
+  </div>
+  <%  if(foundPictures !== null)   {    %>
+  <% foundPictures.forEach(function(picture){  %>
+  <form action="/delete" method="post">
+    <div class="item">
+      <img class="ourImg" src="/imgs/<%= picture.file_name %>" alt="uploaded picture">
+      <input type="button" name="checkbox" value="Delete" onclick="this.form.submit()" />
+      <p><%= picture.pic_name %></p>
+      <input type="hidden" name= "deleteName" value="<%= picture.file_name %>"></input>
+    </div>
+    
+  </form>
+
+
+  <%  });   %>
+  <%  }     %>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include("partials/footer"); %>
